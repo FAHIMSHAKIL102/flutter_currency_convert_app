@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Open Exchange'),
-        backgroundColor: Colors.lightGreen,
+        backgroundColor: Colors.pink,
       ),
       body: Column(),
     );
