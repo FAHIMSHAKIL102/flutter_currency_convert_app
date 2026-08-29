@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 Future<RatesModel> fetchrates() async {
   var response = await http.get(
     Uri.parse(
-      'https://openexchangerates.org/api/latest.json?base=USD&app_id=' + key,
+      'https://openexchangerates.org/api/latest.json?base=USD&app_id=$key',
     ),
   );
   final result = ratesModelFromJson(response.body);
@@ -16,7 +16,7 @@ Future<RatesModel> fetchrates() async {
 Future<Map> fetchcurrencies() async {
   var response = await http.get(
     Uri.parse(
-      'https://openexchangerates.org/api/currencies.json?app_id=' + key,
+      'https://openexchangerates.org/api/currencies.json?app_id=$key',
     ),
   );
   final allCurrencies = allCurrenciesFromJson(response.body);

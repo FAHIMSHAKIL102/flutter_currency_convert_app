@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_currency_convert_app/functions/fetchrates.dart';
 
 class AnyToAny extends StatefulWidget {
   final rates;
@@ -100,29 +101,24 @@ class _AnyToAnyState extends State<AnyToAny> {
             ),
 
             SizedBox(height: 10),
-            Container(
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    answer =
-                        '${amountController.text}' +
-                        convertany(
-                          widget.rates,
-                          amountController.text,
-                          dropdownValue1,
-                          dropdownValue2,
-                        ) +
-                        '' +
-                        dropdownValue2;
-                  });
-                },
-                style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all(
-                    Theme.of(context).primaryColor,
-                  ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  answer =
+                      '${amountController.text}${convertany(
+                        widget.rates,
+                        amountController.text,
+                        dropdownValue1,
+                        dropdownValue2,
+                      )}$dropdownValue2';
+                });
+              },
+              style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.all(
+                  Theme.of(context).primaryColor,
                 ),
-                child: Text('Convert'),
               ),
+              child: Text('Convert'),
             ),
             SizedBox(child: Text('Answer')),
           ],
