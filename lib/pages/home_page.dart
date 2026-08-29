@@ -29,8 +29,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var h = MediaQuery.of(context).size.height;
-    var w = MediaQuery.widthOf(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('Open Exchange'),
