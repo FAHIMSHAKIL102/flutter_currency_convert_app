@@ -105,8 +105,7 @@ class _AnyToAnyState extends State<AnyToAny> {
                 onPressed: () {
                   setState(() {
                     answer =
-                        amountController.text +
-                        '' +
+                        '${amountController.text}' +
                         convertany(
                           widget.rates,
                           amountController.text,
@@ -117,12 +116,12 @@ class _AnyToAnyState extends State<AnyToAny> {
                         dropdownValue2;
                   });
                 },
-                child: Text('Convert'),
                 style: ButtonStyle(
                   backgroundColor: WidgetStateProperty.all(
                     Theme.of(context).primaryColor,
                   ),
                 ),
+                child: Text('Convert'),
               ),
             ),
             SizedBox(child: Text('Answer')),
